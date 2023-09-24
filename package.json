@@ -1,0 +1,35 @@
+{
+  "name": "react-router-alias",
+  "version": "1.0.0",
+  "description": "React Router Alias is a lightweight utility designed to manage route aliases in React applications. It provides an easy-to-use, enum-based registry for mapping route aliases to actual routes.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc",
+    "test": "mocha -r ts-node/register 'tests/**/*.ts'"
+  },
+  "files": [
+    "dist/**",
+    "README.md"
+  ],
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex20465/react-route-alias.git"
+  },
+  "author": "Alexandros Fotiadis <fotiadis@alexandros.blue>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex20465/react-route-alias/issues"
+  },
+  "homepage": "https://github.com/alex20465/react-route-alias#readme",
+  "devDependencies": {
+    "@types/chai": "^4.3.9",
+    "@types/mocha": "^10.0.3",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
