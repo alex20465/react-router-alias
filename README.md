@@ -33,15 +33,21 @@ import { RouteAliasManager } from 'react-router-alias';
 
 enum RouteAliases {
     HOME = "/",
-    ORDER = "/order/:id"
+    ORDER = "/order/:orderId"
+    ORDER_ITEM = "/order/:orderId/item/:itemId"
 }
 
 const aliases = new RouteAliasManager(RouteAliases);
 
 // ... you can continue using `RouteAliases` in your actual router.
 
-aliases.withoutParams().HOME // OUTPUT: "/"
-aliases.withParams({id: 1}).ORDER // OUTPUT: "/order/1"
-aliases.withParams({}).ORDER // OUTPUT:  THROWS ERROR, MISSING PARAM
+aliases.withoutParams().HOME                // OUTPUT: "/"
+aliases.withParams({orderId: 1}).ORDER      // OUTPUT: "/order/1"
+aliases.withParams({}).ORDER                // OUTPUT:  THROWS ERROR, MISSING PARAM
+
+const contextual = aliases.withParams({ orderId: 1, itemId: 1 }) // a Magic Enum of RouteAliases
+
+contextual.ORDER        // OUTPUT: "/order/1"
+contextual.ORDER_ITEM   // OUTPUT: "/order/1/item/1"
 
 ```
